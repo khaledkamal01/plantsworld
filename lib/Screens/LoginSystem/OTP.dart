@@ -1,13 +1,19 @@
-import 'dart:async';
+import 'package:intl/intl.dart' as intl;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'Login-1.dart';
 
-class Otp extends StatelessWidget {
+class Otp extends StatefulWidget {
   const Otp({Key? key}) : super(key: key);
 
+  @override
+  State<Otp> createState() => _OtpState();
+}
+
+class _OtpState extends State<Otp> {
+  bool timeMinuteEnd =false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -155,6 +161,40 @@ class Otp extends StatelessWidget {
                   ),
                 )),
             SizedBox(height: 30,),
+            TweenAnimationBuilder<Duration>(
+                duration: const Duration(seconds: 60),
+                tween: Tween(
+                    begin: const Duration(seconds: 60),
+                    end: Duration.zero),
+                onEnd: () {
+                  setState(() {
+                    timeMinuteEnd = true;
+                  });
+                },
+                builder: (BuildContext context,
+                    Duration value, Widget? child) {
+                  var f = intl.NumberFormat("00");
+                  final seconds =
+                  f.format(value.inSeconds % 60);
+                  return Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 5),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text("00:", style:TextStyle(
+                              color: Colors.grey,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18)),
+                          Text(seconds,
+                              textAlign: TextAlign.center,
+                              style: const TextStyle(
+                                  color: Colors.grey,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18)),
+                        ],
+                      ));
+                }),
 
             Text("لم استلم الكود؟"),
             TextButton(
