@@ -51,17 +51,19 @@ class _OrdersState extends State<OrdersScreen> {
             children: [
               IconButton(
                 onPressed: () {},
-                icon: Icon(
-                  Icons.notifications_rounded,
-                  color: Colors.black,
-                ),
+                icon:Image.asset(
+                  'Assets/Icons/notification.png',
+                  width: 25,
+                  height: 25,
+                )
               ),
               IconButton(
                 onPressed: () {},
-                icon: const Icon(
-                  Icons.shopping_cart_sharp,
-                  color: Colors.black,
-                ),
+                icon: Image.asset(
+                  'Assets/Icons/cart.png',
+                  width: 25,
+                  height: 25,
+                )
               ),
             ],
           ),

@@ -21,7 +21,7 @@ class _OtpState extends State<Otp> {
         centerTitle: true,
         title: Text(
           "رمز التحقق",
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: Colors.black,fontFamily: 'Fonts'),
         ),
         backgroundColor: Colors.white,
         elevation: 0.0,
@@ -42,16 +42,14 @@ class _OtpState extends State<Otp> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 70, bottom: 50),
+              padding: const EdgeInsets.only(top: 20, bottom: 20),
               child: Center(
-                child: Image(
-                  image: AssetImage(""),
-                ),
+               child: Image.asset("Assets/Images/message.png")
               ),
             ),
             Text(
               "يرجى التحقق من بريدك الالكتروني و ادخال الرمز هنا",
-              style: TextStyle(fontSize: 18),
+              style: TextStyle(fontSize: 18,fontFamily: 'Fonts'),
             ),
             SizedBox(
               height: 30,
@@ -144,7 +142,7 @@ class _OtpState extends State<Otp> {
             Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30.0),
-                  color: Colors.green,
+                  color: Color(0XFF218C03),
                 ),
                 height: 50.0,
                 width: 250,
@@ -157,7 +155,7 @@ class _OtpState extends State<Otp> {
                   },
                   child: Text(
                     "التالي",
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: Colors.white,fontFamily: 'Fonts'),
                   ),
                 )),
             SizedBox(height: 30,),
@@ -196,12 +194,12 @@ class _OtpState extends State<Otp> {
                       ));
                 }),
 
-            Text("لم استلم الكود؟"),
+            Text("لم استلم الكود؟",style: TextStyle(fontFamily: 'Fonts'),),
             TextButton(
               onPressed: () {},
               child: Text(
                 "اعادة ارسال",
-                style: TextStyle(color: Colors.orange,decoration:
+                style: TextStyle(color: Color(0XFFF2A007),fontFamily: 'Fonts',decoration:
                     TextDecoration.underline ,
               ),
             ))

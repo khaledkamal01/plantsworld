@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 
 import 'Login-1.dart';
+import 'OTP.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -11,76 +12,86 @@ class LoginScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Center(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "اهلا و سهلا بك",
-                  style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.green),
-                ),
-                Text(
-                  "قم بتسجيل دخول لبدء رحلتك معنا ",
-                  style: TextStyle(color: Colors.grey),
-                ),
-                SizedBox(
-                  height: 30,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Image(
+
+
+                  image: AssetImage("Assets/Images/loginImage.png")),
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Column(
+
                   children: [
                     Text(
-                      "رقم الجوال",
-                      style: TextStyle(color: Colors.green, fontSize: 25),
-                    )
+                      "اهلا و سهلا بك",
+                      style: TextStyle(
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0XFF012603),fontFamily: 'Fonts'),
+                    ),
+                    Text(
+                      "قم بتسجيل دخول لبدء رحلتك معنا ",
+                      style: TextStyle(color: Colors.grey,fontFamily: 'Fonts'),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Text(
+                          "رقم الجوال",
+                          style: TextStyle(color: Color(0XFF012603), fontSize: 25,fontFamily: 'Fonts'),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: 40,
+                    ),
+                    IntlPhoneField(
+                      decoration: InputDecoration(
+                        labelText: 'Phone Number',
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(),
+                        ),
+                      ),
+                      languageCode: "en",
+                      onChanged: (phone) {
+                        print(phone.completeNumber);
+                      },
+                      onCountryChanged: (country) {
+                        print('Country changed to: ' + country.name);
+                      },
+                    ),
+                    SizedBox(
+                      height: 50,
+                    ),
+                    Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30.0),
+                          color: Color(0XFF218C03),
+                        ),
+                        height: 50.0,
+                        width: 250,
+                        child: MaterialButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Otp()),
+                            );
+                          },
+                          child: Text(
+                            "تسجيل دخول",
+                            style: TextStyle(color: Colors.white,fontFamily: 'Fonts'),
+                          ),
+                        ))
                   ],
                 ),
-                SizedBox(
-                  height: 40,
-                ),
-                IntlPhoneField(
-                  decoration: InputDecoration(
-                    labelText: 'Phone Number',
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide(),
-                    ),
-                  ),
-                  languageCode: "en",
-                  onChanged: (phone) {
-                    print(phone.completeNumber);
-                  },
-                  onCountryChanged: (country) {
-                    print('Country changed to: ' + country.name);
-                  },
-                ),
-                SizedBox(
-                  height: 50,
-                ),
-                Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30.0),
-                      color: Colors.green,
-                    ),
-                    height: 50.0,
-                    width: 250,
-                    child: MaterialButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => Login1()),
-                        );
-                      },
-                      child: Text(
-                        "تسجيل دخول",
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ))
-              ],
-            ),
+              ),
+
+            ],
           ),
         ),
       ),

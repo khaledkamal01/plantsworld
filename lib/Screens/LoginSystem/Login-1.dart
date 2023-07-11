@@ -28,27 +28,34 @@ class _Login1State extends State<Login1> {
               ),
               Text(
                 "اهلا و سهلا بك",
-                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold,fontFamily: 'Fonts'),
               ),
               Text(
                 "قم باكمال بياناتك لاتمام عملية التسجيل",
                 style: TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.bold,
-                    color: Colors.grey),
+                    color: Colors.grey,fontFamily: 'Fonts'),
               ),
               // image
               Padding(
-                padding: const EdgeInsets.only(top: 40, bottom: 40),
+                padding: const EdgeInsets.only(top: 40, bottom: 20),
                 child: Center(
-                  child: CircleAvatar(
-                    backgroundImage: AssetImage(""),
-                    radius: 50,
+                  child:Container(
+                    height: 180,
+                    width: 180,
+                    decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                        image: AssetImage("Assets/Images/profile.png"),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
                   ),
                 ),
               ),
 
-              Text("اسم المستخدم"),
+              Text("اسم المستخدم",style: TextStyle(fontFamily: 'Fonts'),),
               SizedBox(
                 height: 20,
               ),
@@ -79,12 +86,12 @@ class _Login1State extends State<Login1> {
                                 titlePadding:
                                     EdgeInsets.symmetric(horizontal: 30),
                                 actionsPadding:
-                                    EdgeInsets.symmetric(horizontal: 20),
+                                    EdgeInsets.symmetric(horizontal: 10),
                                 title: Text(
                                   'سياسة الخصوصية و شروط الاستخدام',
-                                  style: TextStyle(fontSize: 18),
+                                  style: TextStyle(fontSize: 18,fontFamily: 'Fonts'),
                                 ),
-                                content: Text('khaled kamal'),
+                                content: Text('khaled kamal',style: TextStyle(fontFamily: 'Fonts'),),
                                 actions: <Widget>[
                                   Column(
                                     children: [
@@ -98,11 +105,11 @@ class _Login1State extends State<Login1> {
                                             children: [
                                               Text("اوافق على سياسة الخصوصية و",
                                                   style: TextStyle(
-                                                      color: Colors.blue)),
+                                                      color: Colors.blue,fontFamily: 'Fonts')),
                                               Text(
                                                 "شروط الاستخدام",
                                                 style: TextStyle(
-                                                    color: Colors.blue,
+                                                    color: Colors.blue,fontFamily: 'Fonts',
                                                     decoration: TextDecoration
                                                         .underline,
                                                     decorationThickness: 2.0),
@@ -121,33 +128,31 @@ class _Login1State extends State<Login1> {
                                           ),
                                         ],
                                       ),
-                                      TextButton(
+                                      Padding(
+                                        padding: const EdgeInsets.only(bottom: 20),
                                         child: Container(
                                             decoration: BoxDecoration(
                                               borderRadius:
                                                   BorderRadius.circular(30.0),
-                                              color: Colors.green,
+                                              color: Color(0XFF218C03),
                                             ),
-                                            height: 50.0,
-                                            width: 250,
+                                            height: 40.0,
+                                            width: 220,
                                             child: MaterialButton(
                                               onPressed: () {
                                                 Navigator.push(
                                                   context,
                                                   MaterialPageRoute(
                                                       builder: (context) =>
-                                                          CropsView()),
+                                                          Login1()),
                                                 );
                                               },
                                               child: Text(
                                                 "التالي",
                                                 style: TextStyle(
-                                                    color: Colors.white),
+                                                    color: Colors.white,fontFamily: 'Fonts'),
                                               ),
                                             )),
-                                        onPressed: () {
-                                          Navigator.of(context).pop();
-                                        },
                                       ),
                                     ],
                                   ),
@@ -165,7 +170,7 @@ class _Login1State extends State<Login1> {
                             decorationThickness: 2.0),
                       )),
                   Text("اوافق على سياسة الخصوصية و",
-                      style: TextStyle(color: Colors.blue)),
+                      style: TextStyle(color: Colors.blue,fontFamily: 'Fonts')),
                   Checkbox(
                     activeColor: Colors.white,
                     checkColor: Colors.orange,
@@ -185,7 +190,7 @@ class _Login1State extends State<Login1> {
                 child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30.0),
-                      color: Colors.green,
+                      color: Color(0XFF218C03),
                     ),
                     height: 50.0,
                     width: 250,
@@ -193,12 +198,12 @@ class _Login1State extends State<Login1> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Login1()),
+                          MaterialPageRoute(builder: (context) => CropsView()),
                         );
                       },
                       child: Text(
                         "التالي",
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(color: Colors.white,fontFamily: 'Fonts'),
                       ),
                     )),
               )

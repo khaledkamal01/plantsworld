@@ -10,20 +10,23 @@ class OnboardingScreen1 extends StatelessWidget {
       body: Column(
         children: [
           Container(
-            height: MediaQuery
-                .sizeOf(context)
-                .height,
+            height: MediaQuery.sizeOf(context).height,
             padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 32.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset("kh"),
+                Image.asset(
+                  "Assets/Images/onboarding11.png",
+                  height: 300,
+                  width: 300,
+                ),
                 SizedBox(height: 32.0),
                 Text(
                   "hghgghghghh",
                   style: TextStyle(
+                    color: Color(0XFF012603),
                     fontSize: 24.0,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.bold,fontFamily: 'Fonts'
                   ),
                 ),
                 SizedBox(height: 16.0),
@@ -34,6 +37,7 @@ class OnboardingScreen1 extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 18.0,
                       color: Colors.grey,
+                        fontFamily: 'Fonts'
                     ),
                   ),
                 ),
@@ -65,7 +69,7 @@ class OnboardingScreen1 extends StatelessWidget {
                       height: 10,
                       width: 10,
                       decoration: BoxDecoration(
-                          shape: BoxShape.circle, color: Colors.green),
+                          shape: BoxShape.circle, color: Color(0XFF218C03)),
                     )
                   ],
                 ),
@@ -78,7 +82,8 @@ class OnboardingScreen1 extends StatelessWidget {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Onboarding2()),
+                          MaterialPageRoute(
+                              builder: (context) => Onboarding2()),
                         );
                       },
                       child: Stack(
@@ -101,7 +106,7 @@ class OnboardingScreen1 extends StatelessWidget {
                             bottom: 10.0,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: Colors.green,
+                                color: Color(0XFF218C03),
                                 shape: BoxShape.circle,
                               ),
                               child: Icon(
@@ -119,12 +124,13 @@ class OnboardingScreen1 extends StatelessWidget {
                     TextButton(
                       child: Text(
                         "تخطي",
-                        style: TextStyle(color: Colors.grey, fontSize: 20),
+                        style: TextStyle(color: Colors.grey, fontSize: 20,fontFamily: 'Fonts'),
                       ),
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => LoginScreen()),
+                          MaterialPageRoute(
+                              builder: (context) => LoginScreen()),
                         );
                       },
                     )

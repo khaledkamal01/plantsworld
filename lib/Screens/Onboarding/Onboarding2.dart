@@ -18,23 +18,25 @@ class Onboarding2 extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset("kh"),
+                Image.asset("Assets/Images/Onboarding2.png"),
                 SizedBox(height: 32.0),
                 Text(
                   "التقط الصورة و دعنا نهتم بها ",
                   style: TextStyle(
+                    color: Color(0XFF012603),
                     fontSize: 24.0,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.bold
+                      ,fontFamily: 'Fonts'
                   ),
                 ),
                 SizedBox(height: 16.0),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 19),
+                  padding: const EdgeInsets.symmetric(horizontal: 17),
                   child: Text(
                     "هذا النص هو مثال لنص يمكن ان يستبدل في نفس المساحة, لقد تم توليد هذا النص من مولد النص العربي, حيث يمكنك ان تولد مثل هذا النص او",
                     style: TextStyle(
                       fontSize: 18.0,
-                      color: Colors.grey,
+                      color: Colors.grey,fontFamily: 'Fonts'
                     ),
                   ),
                 ),
@@ -57,7 +59,7 @@ class Onboarding2 extends StatelessWidget {
                       height: 10,
                       width: 10,
                       decoration: BoxDecoration(
-                          shape: BoxShape.circle, color: Colors.green),
+                          shape: BoxShape.circle, color: Color(0XFF218C03)),
                     ),
                     SizedBox(
                       width: 10,
@@ -100,7 +102,7 @@ class Onboarding2 extends StatelessWidget {
                             bottom: 10.0,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: Colors.green,
+                                color: Color(0XFF218C03),
                                 shape: BoxShape.circle,
                               ),
                               child: Icon(
@@ -118,7 +120,7 @@ class Onboarding2 extends StatelessWidget {
                     TextButton(
                       child: Text(
                         "تخطي",
-                        style: TextStyle(color: Colors.grey, fontSize: 20),
+                        style: TextStyle(color: Colors.grey, fontSize: 20,fontFamily: 'Fonts'),
                       ),
                       onPressed: () {
                         Navigator.push(

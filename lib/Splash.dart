@@ -1,24 +1,31 @@
-import 'package:easy_splash_screen/easy_splash_screen.dart';
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import 'Screens/Onboarding/Onboarding1.dart';
 
-class Splash extends StatelessWidget {
-  const Splash({Key? key}) : super(key: key);
+class SplashScreen extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Timer(
+        const Duration(seconds: 5),
+        () => Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => OnboardingScreen1())));
+  }
 
   @override
   Widget build(BuildContext context) {
-    return EasySplashScreen(
-      logo: Image(
-        image: AssetImage('Assets/splash.PNG'),
-        height: 300,
-        width: 200,
-      ),
-      logoWidth: 200,
-      showLoader: false,
+    return Container(
+      decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage("Assets/Images/Capture.PNG"), fit: BoxFit.cover)),
 
-      navigator: OnboardingScreen1(),
-      durationInSeconds: 4,
     );
   }
 }
