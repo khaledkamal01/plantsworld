@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:plantsworld/Screens/PaymentSystem/Cart.dart';
 
 import '../../Models/FavoritesModel.dart';
+import '../Notifications Screen.dart';
 
 class OffersScreen extends StatefulWidget {
   const OffersScreen({Key? key}) : super(key: key);
@@ -45,7 +47,10 @@ class _FavoritesScreenState extends State<OffersScreen> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>NotificationsScreen()));
+
+              },
               icon: Image.asset(
                 'Assets/Icons/notification.png',
                 width: 25,
@@ -53,7 +58,10 @@ class _FavoritesScreenState extends State<OffersScreen> {
               )
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>CartScreen()));
+
+              },
               icon:Image.asset(
                 'Assets/Icons/cart.png',
                 width: 25,
@@ -80,11 +88,11 @@ class _FavoritesScreenState extends State<OffersScreen> {
                 border: Border.all(color: Colors.grey, width: 1.0),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(13.0),
+                padding: const EdgeInsets.all(8.0),
                 child: Column(
                   children: [
                     Container(
-                      width: 140,
+                      width: 150,
                       height: 140,
                       child: Image(
                         image: AssetImage(favorites[index].image),
@@ -128,7 +136,7 @@ class _FavoritesScreenState extends State<OffersScreen> {
                     ),
                     Container(
                       height: 30,
-                      width: 140,
+                      width: 150,
                       color: Color(0XFFF2A007),
                       child: MaterialButton(
                         onPressed: (){},
@@ -139,10 +147,12 @@ class _FavoritesScreenState extends State<OffersScreen> {
                               "اضافة الى السلة",
                               style: TextStyle(color: Colors.white,fontFamily: 'Fonts'),
                             ),
-                            Icon(
-                              Icons.shopping_cart_sharp,
+                            Image.asset(
+                              'Assets/Icons/cart.png',
+                              width: 20,
+                              height: 25,
                               color: Colors.white,
-                            )
+                            ),
                           ],
                         ),
                       ),

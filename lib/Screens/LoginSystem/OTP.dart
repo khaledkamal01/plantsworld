@@ -52,14 +52,14 @@ class _OtpState extends State<Otp> {
               style: TextStyle(fontSize: 18,fontFamily: 'Fonts'),
             ),
             SizedBox(
-              height: 30,
+              height: MediaQuery.sizeOf(context).height/20,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  height: 60,
-                  width: 60,
+                  height: MediaQuery.sizeOf(context).height/13,
+                  width: MediaQuery.sizeOf(context).width/7,
                   child: TextField(
                     decoration: InputDecoration(
                         enabledBorder: OutlineInputBorder(
@@ -75,11 +75,11 @@ class _OtpState extends State<Otp> {
                   ),
                 ),
                 SizedBox(
-                  width: 30,
+                  width: MediaQuery.sizeOf(context).width/12,
                 ),
                 Container(
-                  height: 60,
-                  width: 60,
+                  height: MediaQuery.sizeOf(context).height/13,
+                  width: MediaQuery.sizeOf(context).width/7,
                   child: TextField(
                     decoration: InputDecoration(
                         enabledBorder: OutlineInputBorder(
@@ -95,11 +95,11 @@ class _OtpState extends State<Otp> {
                   ),
                 ),
                 SizedBox(
-                  width: 30,
+                  width: MediaQuery.sizeOf(context).width/12,
                 ),
                 Container(
-                  height: 60,
-                  width: 60,
+                  height: MediaQuery.sizeOf(context).height/13,
+                  width: MediaQuery.sizeOf(context).width/7,
                   child: TextField(
                     decoration: InputDecoration(
                         enabledBorder: OutlineInputBorder(
@@ -115,11 +115,11 @@ class _OtpState extends State<Otp> {
                   ),
                 ),
                 SizedBox(
-                  width: 30,
+                  width: MediaQuery.sizeOf(context).width/12,
                 ),
                 Container(
-                  height: 60,
-                  width: 60,
+                  height: MediaQuery.sizeOf(context).height/13,
+                  width: MediaQuery.sizeOf(context).width/7,
                   child: TextField(
                     decoration: InputDecoration(
                         enabledBorder: OutlineInputBorder(
@@ -137,15 +137,15 @@ class _OtpState extends State<Otp> {
               ],
             ),
             SizedBox(
-              height: 80,
+              height: MediaQuery.sizeOf(context).height/10,
             ),
             Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30.0),
                   color: Color(0XFF218C03),
                 ),
-                height: 50.0,
-                width: 250,
+                height: MediaQuery.sizeOf(context).height/20,
+                width: MediaQuery.sizeOf(context).width/2,
                 child: MaterialButton(
                   onPressed: () {
                     Navigator.push(

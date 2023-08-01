@@ -29,12 +29,15 @@ class OnboardingScreen3 extends StatelessWidget {
                 SizedBox(height: 16.0),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 19),
-                  child: Text(
-                    "هذا النص هو مثال لنص يمكن ان يستبدل في نفس المساحة, لقد تم توليد هذا النص من مولد النص العربي, حيث يمكنك ان تولد مثل هذا النص او",
-                    style: TextStyle(
-                      fontSize: 18.0,
-                      color: Colors.grey
-                        ,fontFamily: 'Fonts'
+                  child: Directionality(
+                    textDirection: TextDirection.rtl,
+                    child: Text(
+                      "هذا النص هو مثال لنص يمكن ان يستبدل في نفس المساحة, لقد تم توليد هذا النص من مولد النص العربي, حيث يمكنك ان تولد مثل هذا النص او",
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        color: Colors.grey
+                          ,fontFamily: 'Fonts'
+                      ),
                     ),
                   ),
                 ),
@@ -54,8 +57,8 @@ class OnboardingScreen3 extends StatelessWidget {
                       width: 10,
                     ),
                     Container(
-                      height: 10,
-                      width: 10,
+                      height: MediaQuery.sizeOf(context).height/15,
+                      width: MediaQuery.sizeOf(context).width/35,
                       decoration: BoxDecoration(
                           shape: BoxShape.circle, color: Colors.grey),
                     ),
@@ -63,8 +66,8 @@ class OnboardingScreen3 extends StatelessWidget {
                       width: 10,
                     ),
                     Container(
-                      height: 10,
-                      width: 10,
+                      height: MediaQuery.sizeOf(context).height/15,
+                      width: MediaQuery.sizeOf(context).width/35,
                       decoration: BoxDecoration(
                           shape: BoxShape.circle, color: Colors.grey),
                     )

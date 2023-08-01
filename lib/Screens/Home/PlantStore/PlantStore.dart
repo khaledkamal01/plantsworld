@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:plantsworld/Screens/Home/PlantStore/Categories.dart';
+import 'package:plantsworld/Screens/Home/PlantStore/Details/Details.dart';
+import 'package:plantsworld/Screens/Home/PlantStore/Products.dart';
 import 'package:plantsworld/Screens/Home/home.dart';
+import 'package:plantsworld/Screens/PaymentSystem/Cart.dart';
 
 import '../../../Models/CategoriesModel.dart';
 import '../../../Models/FavoritesModel.dart';
+import '../../Notifications Screen.dart';
 
 class PlantStore extends StatefulWidget {
   PlantStore({Key? key}) : super(key: key);
@@ -21,7 +26,7 @@ class _PlantStoreState extends State<PlantStore> {
     Categories(image: "Assets/Images/plant1.png"),
   ];
 
-  final List<Favorites> favorites=[
+  final List<Favorites> favorites = [
     Favorites(image: "Assets/Images/plant.png", name: "potato", price: 30),
     Favorites(image: "Assets/Images/plant.png", name: "potato", price: 30),
     Favorites(image: "Assets/Images/plant.png", name: "potato", price: 30),
@@ -54,15 +59,20 @@ class _PlantStoreState extends State<PlantStore> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             IconButton(
-              onPressed: () {},
-              icon: Image.asset(
-                'Assets/Icons/notification.png',
-                width: 25,
-                height: 25,
-              )
-            ),
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>NotificationsScreen()));
+
+                },
+                icon: Image.asset(
+                  'Assets/Icons/notification.png',
+                  width: 25,
+                  height: 25,
+                )),
             IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>CartScreen()));
+
+                },
                 icon: Image.asset(
                   'Assets/Icons/cart.png',
                   width: 25,
@@ -132,7 +142,12 @@ class _PlantStoreState extends State<PlantStore> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => CategoriesScreen()));
+                          },
                           child: Text(
                             "عرض الكل",
                             style: TextStyle(
@@ -161,7 +176,17 @@ class _PlantStoreState extends State<PlantStore> {
                     shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
-                      return Image(image: AssetImage(categories[index].image));
+                      return GestureDetector(
+                          onTap: () {
+                            if (categories.length == 0) {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => ProductsScreen()));
+                            }
+                          },
+                          child: Image(
+                              image: AssetImage(categories[index].image)));
                     },
                     separatorBuilder: (context, index) => SizedBox(
                       width: 10.0,
@@ -177,7 +202,12 @@ class _PlantStoreState extends State<PlantStore> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ProductsScreen()));
+                      },
                       child: Text(
                         "عرض الكل",
                         style: TextStyle(
@@ -204,73 +234,85 @@ class _PlantStoreState extends State<PlantStore> {
                     shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
-                      return Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.grey, width: 1.0),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(13.0),
-                          child: Column(
-                            children: [
-                              Container(
-                                width: 140,
-                                height: 140,
-                                child: Image(
-                                  image: AssetImage(favorites[index].image),
+                      return GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => DetailsScreen()),
+                          );
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.grey, width: 1.0),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(13.0),
+                            child: Column(
+                              children: [
+                                Container(
+                                  width: 140,
+                                  height: 140,
+                                  child: Image(
+                                    image: AssetImage(favorites[index].image),
+                                  ),
                                 ),
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  IconButton(
-
-                                    icon: isIcon1Selected
-                                        ? Icon(
-                                      Icons.favorite,
-                                      color: Colors.red,
-                                    )
-                                        : Icon(
-                                      Icons.favorite_border,
-                                      color: Colors.grey,
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    IconButton(
+                                      icon: isIcon1Selected
+                                          ? Icon(
+                                              Icons.favorite,
+                                              color: Colors.red,
+                                            )
+                                          : Icon(
+                                              Icons.favorite_border,
+                                              color: Colors.grey,
+                                            ),
+                                      onPressed: toggleIcon,
                                     ),
-                                    onPressed: toggleIcon,
-                                  ),
-                                  Text(favorites[index].name),
-                                ],
-                              ),
-                              Row(
-
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-
-                                  Text(
-                                    " ر.س  " + favorites[index].price.toString(),
-                                    style: TextStyle(color: Color(0XFF218C03)),
-                                  ),
-                                ],
-                              ),
-                              Container(
-                                height: 30,
-                                width: 140,
-                                color: Color(0XFFF2A007),
-                                child: MaterialButton(
-                                  onPressed: (){},
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        "اضافة الى السلة",
-                                        style: TextStyle(color: Colors.white,fontFamily: 'Fonts'),
-                                      ),
-                                      Icon(
-                                        Icons.shopping_cart_sharp,
-                                        color: Colors.white,
-                                      )
-                                    ],
-                                  ),
+                                    Text(favorites[index].name),
+                                  ],
                                 ),
-                              )
-                            ],
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    Text(
+                                      " ر.س  " +
+                                          favorites[index].price.toString(),
+                                      style:
+                                          TextStyle(color: Color(0XFF218C03)),
+                                    ),
+                                  ],
+                                ),
+                                Container(
+                                  height: 30,
+                                  width: 140,
+                                  color: Color(0XFFF2A007),
+                                  child: MaterialButton(
+                                    onPressed: () {},
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          "اضافة الى السلة",
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontFamily: 'Fonts'),
+                                        ),
+                                        Icon(
+                                          Icons.shopping_cart_sharp,
+                                          color: Colors.white,
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
                         ),
                       );
@@ -332,31 +374,30 @@ class _PlantStoreState extends State<PlantStore> {
                                 ),
                               ),
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   IconButton(
-
                                     icon: isIcon1Selected
                                         ? Icon(
-                                      Icons.favorite,
-                                      color: Colors.red,
-                                    )
+                                            Icons.favorite,
+                                            color: Colors.red,
+                                          )
                                         : Icon(
-                                      Icons.favorite_border,
-                                      color: Colors.grey,
-                                    ),
+                                            Icons.favorite_border,
+                                            color: Colors.grey,
+                                          ),
                                     onPressed: toggleIcon,
                                   ),
                                   Text(favorites[index].name),
                                 ],
                               ),
                               Row(
-
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
-
                                   Text(
-                                    " ر.س  " + favorites[index].price.toString(),
+                                    " ر.س  " +
+                                        favorites[index].price.toString(),
                                     style: TextStyle(color: Color(0XFF218C03)),
                                   ),
                                 ],
@@ -366,13 +407,15 @@ class _PlantStoreState extends State<PlantStore> {
                                 width: 140,
                                 color: Color(0XFFF2A007),
                                 child: MaterialButton(
-                                  onPressed: (){},
+                                  onPressed: () {},
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text(
                                         "اضافة الى السلة",
-                                        style: TextStyle(color: Colors.white,fontFamily: 'Fonts'),
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontFamily: 'Fonts'),
                                       ),
                                       Icon(
                                         Icons.shopping_cart_sharp,

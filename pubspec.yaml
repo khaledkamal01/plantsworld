@@ -35,6 +35,17 @@ dependencies:
   smooth_page_indicator: ^1.0.0+2
   intl_phone_field: ^3.2.0
   intl: ^0.18.1
+  flutter_rating_bar: ^4.0.1
+  timeline_tile: ^2.0.0
+  getwidget: ^3.1.1
+  camera: ^0.10.5+2
+  image_picker: ^1.0.1
+  fluttertoast: ^8.2.2
+  image_gallery_saver: ^2.0.3
+
+
+
+
 
 
 
@@ -75,6 +86,35 @@ flutter:
   assets:
     - Assets/Images/
     - Assets/Icons/
+    - Assets/Images/plant3.png
+    - Assets/Images/الري.png
+    - Assets/Images/cash.png
+    - Assets/Images/orangelogo.png
+    - Assets/Images/OrderPlaced.png
+    - Assets/Images/greenBoxOrder.png
+    - Assets/Images/فاتورة.png
+    - Assets/Images/plant4.png
+    - Assets/Images/plant5.png
+    - Assets/Images/plant6.png
+    - Assets/Images/CancelOrder.png
+    - Assets/Images/العملة.png
+    - Assets/Images/person.png
+    - Assets/Images/share.png
+    - Assets/Images/phone.png
+    - Assets/Images/sitting.png
+    - Assets/Images/partners.png
+    - Assets/Images/Delivery Policy.png
+    - Assets/Images/Informations Policy.png
+    - Assets/Images/privacy policy.png
+    - Assets/Images/Return Policy.png
+    - Assets/Images/Status.png
+    - Assets/Images/back.png
+    - Assets/Icons/d1.png
+    - Assets/Icons/d2.png
+    - Assets/Icons/d3.png
+    - Assets/Icons/logo.png
+    - Assets/Icons/وصف المرض.png
+    - Assets/Icons/treat.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

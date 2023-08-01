@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:plantsworld/Screens/PaymentSystem/Cart.dart';
 
+import '../Notifications Screen.dart';
 import 'More.dart';
 
 class Subscription extends StatelessWidget {
@@ -16,13 +18,16 @@ class Subscription extends StatelessWidget {
           style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,
-        leadingWidth: 160,
+        leadingWidth: MediaQuery.sizeOf(context).width / 4,
         leading: Row(
 
             children: [
 
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>NotificationsScreen()));
+
+            },
             icon: Image.asset(
               'Assets/Icons/notification.png',
               width: 25,
@@ -30,7 +35,10 @@ class Subscription extends StatelessWidget {
             )
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>CartScreen()));
+
+            },
             icon: Image.asset("Assets/Icons/cart.png")
           ),
 
@@ -79,21 +87,21 @@ class Subscription extends StatelessWidget {
               endIndent: 20,
             ),
             SizedBox(
-              height: 15,
+              height: MediaQuery.sizeOf(context).height/90,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text("12/2/2001"),
                 SizedBox(
-                  width: 10,
+                  width: MediaQuery.sizeOf(context).width/20,
                 ),
                 Text(
                   "تاريخ الاشتراك",
                   style: TextStyle(color: Colors.grey),
                 ),
                 SizedBox(
-                  width: 15,
+                  width: MediaQuery.sizeOf(context).width/20,
                 ),
                 Icon(
                   Icons.calendar_month,
@@ -108,14 +116,14 @@ class Subscription extends StatelessWidget {
                 children: [
                   Text("12/2/2001"),
                   SizedBox(
-                    width: 10,
+                    width: MediaQuery.sizeOf(context).width/20,
                   ),
                   Text(
                     "تاريخ انتهاء الاشتراك",
                     style: TextStyle(color: Colors.grey),
                   ),
                   SizedBox(
-                    width: 15,
+                    width: MediaQuery.sizeOf(context).width/20,
                   ),
                   Icon(
                     Icons.calendar_month,
@@ -125,14 +133,14 @@ class Subscription extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 20,
+              height: MediaQuery.sizeOf(context).height/90,
             ),
             Text(
               "مميزات الاشتراك",
               style: TextStyle(fontSize: 20),
             ),
             SizedBox(
-              height: 30,
+              height: MediaQuery.sizeOf(context).height/90,
             ),
             Padding(
               padding: const EdgeInsets.only(bottom: 10),
@@ -144,8 +152,8 @@ class Subscription extends StatelessWidget {
                     child: const Text("تشخيص جميع انواع النباتات"),
                   ),
                   Container(
-                    width: 25,
-                    height: 25,
+                    height: MediaQuery.sizeOf(context).height/30,
+                    width: MediaQuery.sizeOf(context).width/14,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: Colors.orange.shade100,
@@ -168,8 +176,8 @@ class Subscription extends StatelessWidget {
                     child: const Text("عدد لا نهائي من الاستشارات من الخبراء"),
                   ),
                   Container(
-                    width: 25,
-                    height: 25,
+                    height: MediaQuery.sizeOf(context).height/30,
+                    width: MediaQuery.sizeOf(context).width/14,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: Colors.orange.shade100,
@@ -192,8 +200,8 @@ class Subscription extends StatelessWidget {
                     child: const Text("يتم تجديد الاشتراك شهريا"),
                   ),
                   Container(
-                    width: 25,
-                    height: 25,
+                    height: MediaQuery.sizeOf(context).height/30,
+                    width: MediaQuery.sizeOf(context).width/14,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: Colors.orange.shade100,
@@ -216,8 +224,8 @@ class Subscription extends StatelessWidget {
                     child: const Text("خبرة لا تقل عن 5 سنوات في الزراعة"),
                   ),
                   Container(
-                    width: 25,
-                    height: 25,
+                    height: MediaQuery.sizeOf(context).height/30,
+                    width: MediaQuery.sizeOf(context).width/14,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: Colors.orange.shade100,
@@ -240,8 +248,8 @@ class Subscription extends StatelessWidget {
                     child: const Text("دفع امن معاملات امنه و مشفرة",style: TextStyle(fontFamily: 'Fonts'),),
                   ),
                   Container(
-                    width: 25,
-                    height: 25,
+                    height: MediaQuery.sizeOf(context).height/30,
+                    width: MediaQuery.sizeOf(context).width/14,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: Colors.orange.shade100,
@@ -261,8 +269,8 @@ class Subscription extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: Color(0XFF218C03),
                     ),
-                    height: 40.0,
-                    width: 250,
+                    height: MediaQuery.sizeOf(context).height/20,
+                    width: MediaQuery.sizeOf(context).width/1.5,
                     child: MaterialButton(
                       onPressed: () {},
                       child: Text(

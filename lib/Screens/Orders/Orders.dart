@@ -1,8 +1,10 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:plantsworld/Screens/PaymentSystem/Cart.dart';
 
 import '../../Models/OrdersModel.dart';
+import '../Notifications Screen.dart';
 
 class OrdersScreen extends StatefulWidget {
   const OrdersScreen({Key? key}) : super(key: key);
@@ -50,7 +52,10 @@ class _OrdersState extends State<OrdersScreen> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>NotificationsScreen()));
+
+                },
                 icon:Image.asset(
                   'Assets/Icons/notification.png',
                   width: 25,
@@ -58,7 +63,10 @@ class _OrdersState extends State<OrdersScreen> {
                 )
               ),
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>CartScreen()));
+
+                },
                 icon: Image.asset(
                   'Assets/Icons/cart.png',
                   width: 25,

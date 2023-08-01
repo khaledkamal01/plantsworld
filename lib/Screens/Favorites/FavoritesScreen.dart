@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:plantsworld/Screens/PaymentSystem/Cart.dart';
 
 import '../../Models/FavoritesModel.dart';
+import '../Notifications Screen.dart';
 
 class FavoritesScreen extends StatefulWidget {
   const FavoritesScreen({Key? key}) : super(key: key);
@@ -38,7 +40,10 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>NotificationsScreen()));
+
+              },
               icon: Image.asset(
                 'Assets/Icons/notification.png',
                 width: 25,
@@ -46,7 +51,10 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
               )
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>CartScreen()));
+
+              },
               icon: Image.asset(
                 'Assets/Icons/cart.png',
                 width: 25,
@@ -61,10 +69,10 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
         padding: const EdgeInsets.all(20.0),
         child: GridView.builder(
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, // Number of columns in the grid
-            crossAxisSpacing: 15, // Spacing between columns
-            mainAxisSpacing: 15, //
-            childAspectRatio: 0.65,// Spacing between rows
+            crossAxisCount: 2,
+            crossAxisSpacing: 15,
+            mainAxisSpacing: 15,
+            childAspectRatio: 0.65,
           ),
           itemCount: favorites.length,
           itemBuilder: (BuildContext context, int index) {
@@ -108,17 +116,25 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                     ),
                     Container(
                       height: 30,
-                      width: 120,
-                      color: Colors.orange,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            "اضافة الى السلة",
-                            style: TextStyle(color: Colors.white,fontFamily: 'Fonts'),
-                          ),
-                          Icon(Icons.shopping_cart_sharp,color: Colors.white,)
-                        ],
+                      width: 150,
+                      color: Color(0XFFF2A007),
+                      child: MaterialButton(
+                        onPressed: (){},
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "اضافة الى السلة",
+                              style: TextStyle(color: Colors.white,fontFamily: 'Fonts'),
+                            ),
+                            Image.asset(
+                              'Assets/Icons/cart.png',
+                              width: 20,
+                              height: 25,
+                              color: Colors.white,
+                            ),
+                          ],
+                        ),
                       ),
                     )
                   ],

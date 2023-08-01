@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:plantsworld/Models/CropsInProfile.dart';
+import 'package:plantsworld/Screens/Home/NavigationBar.dart';
+import 'package:plantsworld/Screens/PaymentSystem/Cart.dart';
 
+import '../Notifications Screen.dart';
 import 'More.dart';
 
 class Profile extends StatelessWidget {
@@ -22,13 +25,16 @@ class Profile extends StatelessWidget {
           style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,
-        leadingWidth: 160,
+        leadingWidth: MediaQuery.sizeOf(context).width / 4,
         leading: Row(
 
             children: [
 
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>NotificationsScreen()));
+
+                },
                 icon: Image.asset(
                   'Assets/Icons/notification.png',
                   width: 25,
@@ -36,7 +42,10 @@ class Profile extends StatelessWidget {
                 )
               ),
               IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>CartScreen()));
+
+                  },
                   icon: Image.asset("Assets/Icons/cart.png")
               ),
 
@@ -46,7 +55,7 @@ class Profile extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => More()),
+                  MaterialPageRoute(builder: (context) => Navigation()),
                 );
               },
               icon: Icon(
@@ -66,8 +75,8 @@ class Profile extends StatelessWidget {
                   Stack(
                     children: [
                       Container(
-                        width: 200,
-                        height: 200,
+                       width: MediaQuery.sizeOf(context).width/2,
+                        height: MediaQuery.sizeOf(context).height/3,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           image: DecorationImage(
@@ -80,8 +89,8 @@ class Profile extends StatelessWidget {
                         bottom: 55,
                         right: 50,
                         child: Container(
-                          height: 30,
-                          width: 30,
+                          height: MediaQuery.sizeOf(context).height/10,
+                          width: MediaQuery.sizeOf(context).width/10,
                           decoration: BoxDecoration(
                               shape: BoxShape.circle, color: Color(0XFFF2A007)),
                           child: Center(
@@ -108,7 +117,7 @@ class Profile extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(bottom: 20),
                 child: Container(
-                  height: 40,
+                  height: MediaQuery.sizeOf(context).height/20,
                   child: TextField(
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
@@ -131,7 +140,7 @@ class Profile extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(bottom: 20),
                 child: Container(
-                  height: 40,
+                  height: MediaQuery.sizeOf(context).height/20,
                   child: TextField(
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
@@ -154,7 +163,7 @@ class Profile extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(bottom: 20),
                 child: Container(
-                  height: 40,
+                  height: MediaQuery.sizeOf(context).height/20,
                   child: TextField(
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
@@ -198,7 +207,7 @@ class Profile extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(bottom: 20),
                 child: Container(
-                  height: 40,
+                  height: MediaQuery.sizeOf(context).height/20,
                   child: TextField(
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
@@ -221,7 +230,7 @@ class Profile extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(bottom: 20),
                 child: Container(
-                  height: 40,
+                  height: MediaQuery.sizeOf(context).height/20,
                   child: TextField(
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
@@ -244,7 +253,7 @@ class Profile extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(bottom: 20),
                 child: Container(
-                  height: 40,
+                  height: MediaQuery.sizeOf(context).height/20,
                   child: TextField(
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
@@ -270,15 +279,15 @@ class Profile extends StatelessWidget {
                     textDirection: TextDirection.rtl,
                     child: Expanded(
                       child: Container(
-                        height: 140.0,
+                        height: MediaQuery.sizeOf(context).height/15,
                         child: ListView.separated(
                           shrinkWrap: true,
                           scrollDirection: Axis.horizontal,
 
                           itemBuilder: (context, index) {
                              return Container(
-                              height: 60,
-                              width: 60,
+                                 height: MediaQuery.sizeOf(context).height/15,
+                              width: MediaQuery.sizeOf(context).width/8,
                               decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   image: DecorationImage(
@@ -304,8 +313,8 @@ class Profile extends StatelessWidget {
                       decoration: BoxDecoration(
                           color: Color(0XFF218C03),
                           borderRadius: BorderRadius.circular(20)),
-                      height: 40.0,
-                      width: 250,
+                      height: MediaQuery.sizeOf(context).height/20,
+                      width: MediaQuery.sizeOf(context).width/1.5,
                       child: MaterialButton(
                         onPressed: () {},
                         child: Text(
@@ -322,8 +331,8 @@ class Profile extends StatelessWidget {
                       decoration: BoxDecoration(
                           color: Color(0XFF218C03),
                           borderRadius: BorderRadius.circular(20)),
-                      height: 40.0,
-                      width: 250,
+                      height: MediaQuery.sizeOf(context).height/20,
+                      width: MediaQuery.sizeOf(context).width/1.5,
                       child: MaterialButton(
                         onPressed: () {
                           Navigator.push(context,

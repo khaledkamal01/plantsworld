@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:plantsworld/Screens/PaymentSystem/Cart.dart';
 
+import '../Notifications Screen.dart';
 import 'More.dart';
 
 class ContactUs extends StatelessWidget {
@@ -22,7 +24,10 @@ class ContactUs extends StatelessWidget {
             children: [
 
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>NotificationsScreen()));
+
+                },
                 icon: Image.asset(
                   'Assets/Icons/notification.png',
                   width: 25,
@@ -30,7 +35,10 @@ class ContactUs extends StatelessWidget {
                 )
               ),
               IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>CartScreen()));
+
+                  },
                   icon: Image.asset("Assets/Icons/cart.png")
               ),
 

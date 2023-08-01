@@ -24,26 +24,30 @@ class _Login1State extends State<Login1> {
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
               SizedBox(
-                height: 60,
+                height: MediaQuery.sizeOf(context).height/20,
               ),
               Text(
                 "اهلا و سهلا بك",
-                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold,fontFamily: 'Fonts'),
+                style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Fonts'),
               ),
               Text(
                 "قم باكمال بياناتك لاتمام عملية التسجيل",
                 style: TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.bold,
-                    color: Colors.grey,fontFamily: 'Fonts'),
+                    color: Colors.grey,
+                    fontFamily: 'Fonts'),
               ),
               // image
               Padding(
                 padding: const EdgeInsets.only(top: 40, bottom: 20),
                 child: Center(
-                  child:Container(
-                    height: 180,
-                    width: 180,
+                  child: Container(
+                    height: MediaQuery.sizeOf(context).height/5,
+                    width: MediaQuery.sizeOf(context).width/2,
                     decoration: const BoxDecoration(
                       shape: BoxShape.circle,
                       image: DecorationImage(
@@ -55,9 +59,12 @@ class _Login1State extends State<Login1> {
                 ),
               ),
 
-              Text("اسم المستخدم",style: TextStyle(fontFamily: 'Fonts'),),
+              Text(
+                "اسم المستخدم",
+                style: TextStyle(fontFamily: 'Fonts'),
+              ),
               SizedBox(
-                height: 20,
+                height: MediaQuery.sizeOf(context).height/40,
               ),
               TextFormField(
                   decoration: InputDecoration(
@@ -65,12 +72,12 @@ class _Login1State extends State<Login1> {
                   borderSide: BorderSide(color: Colors.grey),
                 ),
                 fillColor: Colors.grey[100],
-                // Change the background color of the input field
+
                 filled: true,
               )),
 
               SizedBox(
-                height: 30,
+                height: MediaQuery.sizeOf(context).height/30,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -89,9 +96,13 @@ class _Login1State extends State<Login1> {
                                     EdgeInsets.symmetric(horizontal: 10),
                                 title: Text(
                                   'سياسة الخصوصية و شروط الاستخدام',
-                                  style: TextStyle(fontSize: 18,fontFamily: 'Fonts'),
+                                  style: TextStyle(
+                                      fontSize: 18, fontFamily: 'Fonts'),
                                 ),
-                                content: Text('khaled kamal',style: TextStyle(fontFamily: 'Fonts'),),
+                                content: Text(
+                                  'khaled kamal',
+                                  style: TextStyle(fontFamily: 'Fonts'),
+                                ),
                                 actions: <Widget>[
                                   Column(
                                     children: [
@@ -105,11 +116,13 @@ class _Login1State extends State<Login1> {
                                             children: [
                                               Text("اوافق على سياسة الخصوصية و",
                                                   style: TextStyle(
-                                                      color: Colors.blue,fontFamily: 'Fonts')),
+                                                      color: Colors.blue,
+                                                      fontFamily: 'Fonts')),
                                               Text(
                                                 "شروط الاستخدام",
                                                 style: TextStyle(
-                                                    color: Colors.blue,fontFamily: 'Fonts',
+                                                    color: Colors.blue,
+                                                    fontFamily: 'Fonts',
                                                     decoration: TextDecoration
                                                         .underline,
                                                     decorationThickness: 2.0),
@@ -129,15 +142,16 @@ class _Login1State extends State<Login1> {
                                         ],
                                       ),
                                       Padding(
-                                        padding: const EdgeInsets.only(bottom: 20),
+                                        padding:
+                                            const EdgeInsets.only(bottom: 20),
                                         child: Container(
                                             decoration: BoxDecoration(
                                               borderRadius:
                                                   BorderRadius.circular(30.0),
                                               color: Color(0XFF218C03),
                                             ),
-                                            height: 40.0,
-                                            width: 220,
+                                            height: MediaQuery.sizeOf(context).height/20,
+                                            width: MediaQuery.sizeOf(context).width/1.8,
                                             child: MaterialButton(
                                               onPressed: () {
                                                 Navigator.push(
@@ -150,7 +164,8 @@ class _Login1State extends State<Login1> {
                                               child: Text(
                                                 "التالي",
                                                 style: TextStyle(
-                                                    color: Colors.white,fontFamily: 'Fonts'),
+                                                    color: Colors.white,
+                                                    fontFamily: 'Fonts'),
                                               ),
                                             )),
                                       ),
@@ -170,7 +185,8 @@ class _Login1State extends State<Login1> {
                             decorationThickness: 2.0),
                       )),
                   Text("اوافق على سياسة الخصوصية و",
-                      style: TextStyle(color: Colors.blue,fontFamily: 'Fonts')),
+                      style:
+                          TextStyle(color: Colors.blue, fontFamily: 'Fonts')),
                   Checkbox(
                     activeColor: Colors.white,
                     checkColor: Colors.orange,
@@ -192,8 +208,8 @@ class _Login1State extends State<Login1> {
                       borderRadius: BorderRadius.circular(30.0),
                       color: Color(0XFF218C03),
                     ),
-                    height: 50.0,
-                    width: 250,
+                    height: MediaQuery.sizeOf(context).height/20,
+                    width: MediaQuery.sizeOf(context).width/2,
                     child: MaterialButton(
                       onPressed: () {
                         Navigator.push(
@@ -203,7 +219,8 @@ class _Login1State extends State<Login1> {
                       },
                       child: Text(
                         "التالي",
-                        style: TextStyle(color: Colors.white,fontFamily: 'Fonts'),
+                        style:
+                            TextStyle(color: Colors.white, fontFamily: 'Fonts'),
                       ),
                     )),
               )

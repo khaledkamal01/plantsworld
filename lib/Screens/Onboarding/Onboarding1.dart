@@ -17,9 +17,8 @@ class OnboardingScreen1 extends StatelessWidget {
               children: [
                 Image.asset(
                   "Assets/Images/onboarding11.png",
-                  height: 300,
-                  width: 300,
-                ),
+                  height: MediaQuery.sizeOf(context).height/3,
+                  width: MediaQuery.sizeOf(context).width,                ),
                 SizedBox(height: 32.0),
                 Text(
                   "hghgghghghh",
@@ -32,24 +31,27 @@ class OnboardingScreen1 extends StatelessWidget {
                 SizedBox(height: 16.0),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 19),
-                  child: Text(
-                    "متجر كامل لبيع كل انواع النباتات بالاضافة الى التوصيل لجميع انحاء المملكة الاردنية فقط متجر كامل لبيع كل انواع النباتات بالاضافة الى ",
-                    style: TextStyle(
-                      fontSize: 18.0,
-                      color: Colors.grey,
-                        fontFamily: 'Fonts'
+                  child: Directionality(
+                    textDirection: TextDirection.rtl,
+                    child: Text(
+                      "متجر كامل لبيع كل انواع النباتات بالاضافة الى التوصيل لجميع انحاء المملكة الاردنية فقط متجر كامل لبيع كل انواع النباتات بالاضافة الى ",
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        color: Colors.grey,
+                          fontFamily: 'Fonts'
+                      ),
                     ),
                   ),
                 ),
                 SizedBox(
-                  height: 30,
+                  height: MediaQuery.sizeOf(context).height/15,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                      height: 10,
-                      width: 10,
+                      height: MediaQuery.sizeOf(context).height/15,
+                      width: MediaQuery.sizeOf(context).width/35,
                       decoration: BoxDecoration(
                           shape: BoxShape.circle, color: Colors.grey),
                     ),

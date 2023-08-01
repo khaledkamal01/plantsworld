@@ -32,23 +32,24 @@ class Onboarding2 extends StatelessWidget {
                 SizedBox(height: 16.0),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 17),
-                  child: Text(
-                    "هذا النص هو مثال لنص يمكن ان يستبدل في نفس المساحة, لقد تم توليد هذا النص من مولد النص العربي, حيث يمكنك ان تولد مثل هذا النص او",
-                    style: TextStyle(
-                      fontSize: 18.0,
-                      color: Colors.grey,fontFamily: 'Fonts'
+                  child: Directionality(
+                    textDirection: TextDirection.rtl,
+                    child: Text(
+                      "هذا النص هو مثال لنص يمكن ان يستبدل في نفس المساحة, لقد تم توليد هذا النص من مولد النص العربي, حيث يمكنك ان تولد مثل هذا النص او",
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        color: Colors.grey,fontFamily: 'Fonts'
+                      ),
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: 30,
-                ),
+
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                      height: 10,
-                      width: 10,
+                      height: MediaQuery.sizeOf(context).height/15,
+                      width: MediaQuery.sizeOf(context).width/35,
                       decoration: BoxDecoration(
                           shape: BoxShape.circle, color: Colors.grey),
                     ),
@@ -56,24 +57,24 @@ class Onboarding2 extends StatelessWidget {
                       width: 10,
                     ),
                     Container(
-                      height: 10,
-                      width: 10,
+                      height: MediaQuery.sizeOf(context).height/15,
+                      width: MediaQuery.sizeOf(context).width/35,
                       decoration: BoxDecoration(
                           shape: BoxShape.circle, color: Color(0XFF218C03)),
                     ),
                     SizedBox(
-                      width: 10,
+                      width: MediaQuery.sizeOf(context).width/40,
                     ),
                     Container(
-                      height: 10,
-                      width: 10,
+                      height: MediaQuery.sizeOf(context).height/15,
+                      width: MediaQuery.sizeOf(context).width/35,
                       decoration: BoxDecoration(
                           shape: BoxShape.circle, color: Colors.grey),
                     )
                   ],
                 ),
                 SizedBox(
-                  height: 30,
+                  height: MediaQuery.sizeOf(context).height/40,
                 ),
                 Row(
                   children: [
@@ -115,7 +116,7 @@ class Onboarding2 extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      width: 200,
+                      width: MediaQuery.sizeOf(context).width/2,
                     ),
                     TextButton(
                       child: Text(

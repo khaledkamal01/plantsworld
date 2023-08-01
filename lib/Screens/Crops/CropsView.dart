@@ -92,8 +92,8 @@ class CropsView extends StatelessWidget {
                       borderRadius: BorderRadius.circular(30.0),
                       color: Color(0XFF218C03),
                     ),
-                    height: 50.0,
-                    width: 250,
+                    height: MediaQuery.sizeOf(context).height/20,
+                    width: MediaQuery.sizeOf(context).width/2,
                     child: MaterialButton(
                       onPressed: () {
                         Navigator.push(
